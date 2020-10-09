@@ -1,0 +1,30 @@
+[user]
+	name = Yang Bai
+	email = yang.bai@centurygame.com
+[core]
+	excludesfile = /Users/baiyang/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/baiyang/Applications/Sourcetree 2.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[pull]
+  rebase = true
+[commit]
+	template = /Users/baiyang/.stCommitMsg
+[alias]
+	s = status
+	d = diff
+	br = branch
+	last = log -1 HEAD
+	cane = commit --amend --no-edit
+	co = checkout
+	stdi = "!f() { git status && git diff;}; f"
+	grb = 'git ls-remote --heads `git url` | sed "s#^.*refs/heads/##"'
+	url = config --get remote.origin.url
+	rbours = "!f() { (git checkout --ours .||:) && git add .; git rebase --continue; git rebase --skip;}; f"
+	a = add .
+	cm = commit -m
+	rh = reset --hard
