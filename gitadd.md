@@ -11,3 +11,4 @@
 ```git add -A ```
 是上面两个功能的合集（git add --all的缩写）
 
+![](./gitadd.png)
